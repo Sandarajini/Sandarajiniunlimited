@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Updated Page Title -->
+  <title>Sandarajini Unlimited | No. 1 Transport Service in Embilipitiya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-content">
+      <!-- Updated Brand Heading -->
+      <h1 class="brand">Sandarajini Unlimited <span class="sub-brand">| No. 1 Transport Service in Embilipitiya</span></h1>
+      <nav class="nav-links">
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#booking">Booking</a>
+        <button id="loginBtn" class="login-btn">Login</button>
+        <a href="https://wa.me/94772971560" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">Chat on WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <h2 class="hero-title">Reliable Transport Solutions</h2>
+      <p class="hero-subtitle">2 Buses • 1 Van • Comfort • Safety • On‑time</p>
+      <a href="#booking" class="cta-btn">Request a Quote</a>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="section">
+    <h2>Vehicle Gallery</h2>
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-target="bus1">Bus 1</button>
+      <button class="tab" data-target="bus2">Bus 2</button>
+      <button class="tab" data-target="van">Van</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <div class="glass-card container">
+      <p>Sandarajini Unlimited is a trusted transport provider offering comfortable bus and van services across the region. Our fleet is maintained to the highest standards, ensuring safety and punctuality for every journey.</p>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-badge">Owner</div>
+          <h3>Dinesh</h3>
+          <p class="contact-title">Owner - Sandarajini Unlimited</p>
+          <div class="contact-actions">
+            <a href="tel:0772971560" class="contact-btn call-btn">📞 Call 0772971560</a>
+            <a href="https://wa.me/94772971560" target="_blank" rel="noopener noreferrer" class="contact-btn wa-btn">💬 WhatsApp</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-badge manager-badge">Manager</div>
+          <h3>Sanjeewa</h3>
+          <p class="contact-title">Manager - Sandarajini Unlimited</p>
+          <div class="contact-actions">
+            <a href="tel:0702118424" class="contact-btn call-btn">📞 Call 0702118424</a>
+            <a href="https://wa.me/94702118424" target="_blank" rel="noopener noreferrer" class="contact-btn wa-btn">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section id="booking" class="section">
+    <h2>Booking / Inquiry</h2>
+    <form class="booking-form" id="bookingForm">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <select name="vehicle" required>
+        <option value="" disabled selected>Select Vehicle</option>
+        <option value="bus1">Bus 1</option>
+        <option value="bus2">Bus 2</option>
+        <option value="van">Van</option>
+      </select>
+      <textarea name="message" rows="4" placeholder="Your requirements..." required></textarea>
+      <button type="submit">Submit Request</button>
+      <div class="form-message" id="formMessage"></div>
+      
+      <!-- Instant WhatsApp Route Anchor -->
+      <div class="form-whatsapp-helper">
+        <span>Need an instant quote?</span>
+        <a href="https://wa.me/94772971560" target="_blank" rel="noopener noreferrer">Chat via WhatsApp</a>
+      </div>
+    </form>
+  </section>
+
+  <!-- Live Status Badges -->
+  <section class="section">
+    <h2>Live Availability</h2>
+    <div class="status-badges">
+      <span class="badge badge-available">Bus 1 – Available</span>
+      <span class="badge badge-ontrip">Bus 2 – On a Trip</span>
+      <span class="badge badge-available">Van – Available</span>
+    </div>
+  </section>
+
+  <!-- Testimonials & Reviews -->
+  <section class="section">
+    <h2>Customer Reviews</h2>
+    <div class="container">
+      
+      <!-- Interactive Review Form -->
+      <form id="customerReviewForm" class="review-form">
+        <h3>Share Your Experience</h3>
+        
+        <div class="form-group">
+          <label for="reviewName">Your Name</label>
+          <input type="text" id="reviewName" placeholder="Enter your name" required />
+        </div>
+        
+        <div class="form-group">
+          <label>Your Rating</label>
+          <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5" required /><label for="star5" title="5 stars">★</label>
+            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars">★</label>
+            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars">★</label>
+            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars">★</label>
+            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">★</label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="reviewText">Your Review</label>
+          <textarea id="reviewText" rows="4" placeholder="Write your review here..." required></textarea>
+        </div>
+        
+        <button type="submit">Submit Review</button>
+      </form>
+
+      <!-- Dynamic Review Display Grid -->
+      <div id="reviewsDisplayGrid" class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <h4>Sarath Silva</h4>
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          </div>
+          <p>Excellent service, the bus was clean and arrived on time. Highly recommended!</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <h4>Danushka Udugedara</h4>
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          </div>
+          <p>The van trip was comfortable and the driver was very friendly. Great experience!</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <h4>Binupa Sandeepa</h4>
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          </div>
+          <p>Very reliable for group travels. The buses are well maintained and comfortable.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <h4>Udani Palihakkara</h4>
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          </div>
+          <p>Amazing service! Punctual, safe, and the vehicles are in top condition.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <h4>Dihen Hirusara</h4>
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          </div>
+          <p>Best transport service in the area. Professional drivers and well-kept fleet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Sandarajini Unlimited. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://web.facebook.com/profile.php?id=100090281521748" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://wa.me/94772971560" target="_blank" rel="noopener noreferrer" class="footer-whatsapp">Dinesh (Owner): 0772971560</a>
+        <a href="https://wa.me/94702118424" target="_blank" rel="noopener noreferrer" class="footer-whatsapp">Sanjeewa (Manager): 0702118424</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" id="lightboxClose">&times;</span>
+    <img id="lightboxImg" src="" alt="Full view" />
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+<script>
+  // Login button – opens Google Form after password verification
+  const loginBtn = document.getElementById('loginBtn');
+  
+  if (loginBtn) {
+    loginBtn.addEventListener('click', function() {
+      const correctPassword = "sandarajini2026"; 
+      const userInput = prompt("Enter password:");
+      
+      if (userInput === correctPassword) {
+        window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdwfKjTwPnr0B9gO0PpAX-HlVLKno8My1wumsqv8HDzUZHtjw/viewform?usp=header';
+      } else if (userInput !== null) {
+        alert("Incorrect password!");
+      }
+    });
+  }
+</script>

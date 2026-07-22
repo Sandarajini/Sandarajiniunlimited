@@ -1,0 +1,1090 @@
+/* ------------------------------------------------------------
+   Sandarajini Unlimited – Premium Design System & Color Grading
+   ------------------------------------------------------------ */
+
+/* ----- Google Fonts ----- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap');
+
+/* ----- Design Variables ----- */
+:root {
+  --font-primary: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  
+  /* Color Grading System */
+  --primary-blue: #003366;       /* Deep Trust Blue */
+  --primary-blue-dark: #002244;
+  --secondary-red: #CC0000;      /* Bus Red */
+  --secondary-red-dark: #990000;
+  --accent-gold: #FFD700;        /* Tropical Gold */
+  --clean-white: #FFFFFF;        /* Main website background */
+  
+  /* Compatibility mappings */
+  --color-primary: var(--primary-blue);
+  --color-primary-dark: var(--primary-blue-dark);
+  --color-accent: var(--secondary-red);
+  --color-accent-dark: var(--secondary-red-dark);
+  --color-success: #10b981;
+  --color-warning: var(--accent-gold);
+  
+  /* Neutrals */
+  --color-bg: var(--clean-white);
+  --color-card-bg: rgba(255, 255, 255, 0.9);
+  --color-text: #1e293b;
+  --color-text-muted: #475569;
+  --border-color: #cbd5e1;
+  
+  /* Shadows and Effects */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  --shadow-glow: 0 0 15px rgba(0, 51, 102, 0.2);
+  --shadow-glow-accent: 0 0 15px rgba(204, 0, 0, 0.35);
+  
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ----- Reset & Global Styles ----- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--clean-white);
+  color: var(--color-text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--primary-blue);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+.container {
+  width: min(92%, 1280px);
+  margin: 0 auto;
+}
+
+/* ----- Navigation Header ----- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--primary-blue);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+
+.brand {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff !important;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-gold);
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--accent-gold);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.login-btn {
+  background: var(--secondary-red) !important;
+  color: #fff !important;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  box-shadow: var(--shadow-glow-accent);
+  border: none;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  background: var(--secondary-red-dark) !important;
+  box-shadow: 0 8px 20px rgba(204, 0, 0, 0.5);
+}
+
+/* ----- Hero Section ----- */
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  overflow: hidden;
+  margin-bottom: 4rem;
+  padding-top: 80px;
+}
+
+/* Hero Deep Blue 40% mix overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 51, 102, 0.4);
+  z-index: 1;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/fleet.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--secondary-red);
+  color: #fff;
+  padding: 1rem 2.2rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 1.05rem;
+  box-shadow: var(--shadow-glow-accent);
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  background: var(--secondary-red-dark);
+  box-shadow: 0 10px 25px rgba(204, 0, 0, 0.6);
+}
+
+/* ----- Glass Card Design ----- */
+.glass-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  box-shadow: var(--shadow-lg);
+}
+
+/* ----- Sections Layout ----- */
+.section {
+  padding: 6rem 0;
+}
+
+.section h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--primary-blue);
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--secondary-red);
+  margin: 0.8rem auto 0;
+  border-radius: 2px;
+}
+
+/* ----- Vehicle Gallery & Tab Switching ----- */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.tab {
+  background: #fff;
+  color: var(--color-text-muted);
+  border: 1px solid var(--border-color);
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.tab:hover {
+  color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+.tab.active {
+  background: var(--primary-blue);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: var(--shadow-glow);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.gallery-cardItem {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: #fff;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+}
+
+.gallery-cardItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-cardItem::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 51, 102, 0.8) 0%, rgba(0, 51, 102, 0) 60%);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.gallery-cardItem:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-cardItem:hover::after {
+  opacity: 1;
+}
+
+/* ----- Lightbox (Image popup modal) ----- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 51, 102, 0.95);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2000;
+  transition: var(--transition);
+}
+
+.lightbox.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: var(--radius-md);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  transform: scale(0.95);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox.show img {
+  transform: scale(1);
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.lightbox .close:hover {
+  transform: rotate(90deg) scale(1.1);
+  color: var(--accent-gold);
+}
+
+/* ----- Live Status Indicators ----- */
+.status-section {
+  background: var(--clean-white);
+  padding-bottom: 2rem;
+}
+
+.status-badges {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #fff;
+  border: 2px solid var(--accent-gold);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-md);
+  color: var(--primary-blue);
+}
+
+.pulse-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.badge-available .pulse-dot {
+  background-color: var(--accent-gold);
+}
+
+.badge-available .pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold);
+  animation: pulse 1.5s infinite;
+}
+
+.badge-ontrip .pulse-dot {
+  background-color: var(--secondary-red);
+}
+
+.badge-ontrip .pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-red);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ----- About Us Styling ----- */
+.about-section p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* ----- Contact Us Section Styling ----- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-blue);
+}
+
+.contact-badge {
+  background: var(--primary-blue);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+
+.contact-badge.manager-badge {
+  background: var(--secondary-red);
+}
+
+.contact-card h3 {
+  font-size: 1.8rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.2rem;
+}
+
+.contact-title {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.8rem;
+  font-weight: 600;
+}
+
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.call-btn {
+  background: var(--primary-blue);
+  color: #ffffff !important;
+}
+
+.call-btn:hover {
+  background: var(--primary-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.wa-btn {
+  background: #25D366;
+  color: #ffffff !important;
+}
+
+.wa-btn:hover {
+  background: #1da851;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* ----- Booking Form ----- */
+.booking-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  color: var(--color-text);
+  outline: none;
+  transition: var(--transition);
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 4px rgba(0, 51, 102, 0.15);
+}
+
+.booking-form textarea {
+  grid-column: span 2;
+  resize: vertical;
+}
+
+.booking-form button {
+  grid-column: span 2;
+  background: var(--secondary-red);
+  color: #fff;
+  border: none;
+  padding: 1.1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-glow-accent);
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.booking-form button:hover {
+  transform: translateY(-2px);
+  background: var(--secondary-red-dark);
+  box-shadow: 0 8px 25px rgba(204, 0, 0, 0.5);
+}
+
+/* ----- Star Rating Selector ----- */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 0.3rem;
+  font-size: 2.2rem;
+  margin-top: 0.3rem;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: var(--accent-gold);
+}
+
+/* ----- Interactive Review Styling ----- */
+.review-form {
+  max-width: 600px;
+  margin: 0 auto 4rem auto;
+  padding: 2.5rem;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.review-form h3 {
+  color: var(--primary-blue);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.review-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.review-form label {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  outline: none;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 4px rgba(0, 51, 102, 0.15);
+}
+
+.review-form button {
+  background: var(--secondary-red);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-glow-accent);
+  transition: var(--transition);
+}
+
+.review-form button:hover {
+  transform: translateY(-2px);
+  background: var(--secondary-red-dark);
+  box-shadow: 0 8px 20px rgba(204, 0, 0, 0.4);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.review-card {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 2.2rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+}
+
+.review-card::before {
+  content: '“';
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  font-size: 5rem;
+  color: rgba(0, 51, 102, 0.08);
+  font-family: serif;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.review-stars {
+  color: var(--accent-gold);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.review-card h4 {
+  font-size: 1.2rem;
+  color: var(--primary-blue);
+}
+
+.review-card p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-blue);
+}
+
+/* ----- Footer ----- */
+.site-footer {
+  background: var(--primary-blue);
+  color: #fff;
+  padding: 4rem 0 2rem;
+  margin-top: 6rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: var(--accent-gold);
+}
+
+.site-footer p {
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ----- Admin Interface & Map wrapper ----- */
+.map-wrapper {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  margin: 2rem 0;
+  border: 1px solid var(--border-color);
+}
+
+.card {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+  color: var(--primary-blue);
+}
+
+.status-form {
+  max-width: 600px;
+}
+
+.form-label {
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.form-select, .form-input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-select:focus, .form-input:focus {
+  border-color: var(--primary-blue);
+}
+
+/* ----- Utility classes for admin page ----- */
+.card {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--gap);
+}
+
+.card.glass {
+  background: var(--color-card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.6rem;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--secondary-red);
+  color: #fff !important;
+  box-shadow: var(--shadow-glow-accent);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: var(--secondary-red-dark);
+  box-shadow: 0 8px 20px rgba(204, 0, 0, 0.5);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+/* ----- Media Queries / Responsive Adjustments ----- */
+@media (max-width: 992px) {
+  .booking-form {
+    grid-template-columns: 1fr;
+  }
+  .booking-form textarea,
+  .booking-form button,
+  .form-message {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: center;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .site-header {
+    position: static;
+  }
+  
+  .hero {
+    padding-top: 0;
+    min-height: 60vh;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .status-badges {
+    flex-direction: column;
+  }
+}
+
+/* ============================================================
+   Dynamic Animations & Transitions System
+   ============================================================ */
+
+/* ----- Sticky Header Scroll Animation ----- */
+.site-header.scrolled {
+  background: rgba(0, 51, 102, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  padding: 0.2rem 0;
+}
+
+/* ----- Hero Section Entrance Animations ----- */
+.hero-title {
+  animation: heroFadeDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-subtitle {
+  animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+.hero .cta-btn {
+  animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes heroFadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----- Scroll Reveal Classes ----- */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----- Staggered Card Entrance Animation ----- */
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUpCard 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUpCard {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ----- Button Shimmer Effect ----- */
+.cta-btn, .login-btn, .whatsapp-btn, .contact-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-btn::before, .whatsapp-btn::before, .contact-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 70%
+  );
+  transform: rotate(30deg) translateX(-100%);
+  transition: transform 0.8s ease;
+}
+
+.cta-btn:hover::before, .whatsapp-btn:hover::before, .contact-btn:hover::before {
+  transform: rotate(30deg) translateX(100%);
+}
+
+
+
+/* ----- Smooth Card Hover Elevation ----- */
+.glass-card, .contact-card, .review-card, .gallery-cardItem {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+/* ----- Tab Switch Smooth Transition ----- */
+.tab {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
